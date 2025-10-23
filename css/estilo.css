@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    width: 100%;
+}
+
+/* NAVBAR PRINCIPAL */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    height: 15vh;
+}
+
+.menu-left,
+.menu-right {
+    display: flex;
+    gap: 25px;
+    margin-top: 10px;
+    transition: 1s;
+}
+
+.menu-left:hover,
+.menu-right:hover{
+    transform: scale(1.2);
+}
+
+.menu-left a,
+.menu-right a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 2s;
+}
+
+.menu-left a:hover,
+.menu-right a:hover{
+    color: yellow;
+}
+
+/* LOGO CENTRAL */
+.logo-centro {
+    margin-top: 90px;
+}
+
+.logo-centro img {
+    height: 150px;
+}
