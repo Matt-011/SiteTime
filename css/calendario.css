@@ -55,9 +55,20 @@ header {
     margin-left: 20px ;
 }
 
+.titulo{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
 .base{
-    width: 80%;
-    height: 80%;
-    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    height: 70vh;
+    background-color: whitesmoke;
     border: 1px solid black;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
