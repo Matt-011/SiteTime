@@ -1,0 +1,205 @@
+body {
+    font-family: Arial, sans-serif;
+    /* Fonte principal */
+    margin: 0;
+    /* Remove espaçamento padrão */
+    background: #f4f4f4;
+    /* Fundo cinza claro */
+    color: #111;
+    /* Cor do texto */
+}
+
+header {
+    width: 100%;
+    position: relative;
+}
+
+/*Logo em cima*/
+.logo-fixada {
+    position: fixed;
+    /* fixa no topo */
+    top: 10px;
+    /*nao ficar grudada la em cima*/
+    left: 50%;
+    /*joga para a esquerda*/
+    transform: translateX(-50%);
+    /* centraliza na horizontal*/
+    z-index: 9999;
+    /* garante que fique acima de tudo */
+}
+
+.logo-fixada img {
+    height: 120px;
+    filter: drop-shadow(0 0 10px black);
+    /*faz ter uma sombra em baixo*/
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    height: 15vh;
+}
+
+.menu-left,
+.menu-right {
+    display: flex;
+    gap: 25px;
+    /* Espaçamento entre links */
+}
+
+.menu-left a,
+.menu-right a {
+    text-decoration: none;
+    /*fica sem a linha de baixo*/
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    transition: 1s;
+}
+
+.menu-left a:hover,
+.menu-right a:hover {
+    color: yellow;
+    transform: scale(1.2);
+}
+
+/* Caixa das seções brancas */
+.section {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Layout de imagem + texto lado a lado */
+.secao-flex {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* Imagens das seções */
+.secao-flex img {
+    width: 45%;
+    border-radius: 10px;
+}
+
+/* Texto ao lado da imagem */
+.texto-secao {
+    width: 50%;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+h1,
+h2 {
+    text-align: center;
+    /* Centraliza títulos */
+    margin-bottom: 20px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+/* =============================== */
+/*  RESPONSIVIDADE PARA CELULAR    */
+/* =============================== */
+
+@media (max-width: 600px) {
+
+    .logo-fixada img {
+        height: 80px;
+        /* Diminui a logo */
+    }
+
+    .navbar {
+        flex-direction: row;
+        /* Mantém em linha */
+        height: auto;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    .menu-left {
+        margin-right: 20vh;
+        /* Ajuste do menu */
+    }
+
+    .menu-left a,
+    .menu-right a {
+        font-size: 20px;
+        /* Texto menor no mobile */
+    }
+
+    .secao-flex {
+        flex-direction: column;
+        /* Imagem fica em cima */
+        text-align: center;
+    }
+
+    .secao-flex img {
+        width: 100%;
+        /* Imagem ocupa largura total */
+    }
+
+    .texto-secao {
+        width: 100%;
+        /* Texto ocupa toda a largura */
+    }
+}
+
+/* =============================== */
+/*  RESPONSIVIDADE PARA TABLET     */
+/* =============================== */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .logo-fixada img {
+        height: 100px;
+        /* Ajusta tamanho da logo */
+    }
+
+    .navbar {
+        justify-content: space-between;
+        padding: 0 20px;
+        height: 12vh;
+        /* Ajuste do header */
+    }
+
+    .menu-left a,
+    .menu-right a {
+        font-size: 24px;
+        /* Tamanho moderado do texto */
+    }
+
+    .secao-flex img {
+        width: 48%;
+        /* Ajusta imagem */
+    }
+
+    .texto-secao {
+        width: 48%;
+        /* Ajusta texto */
+    }
+}
+
+footer {
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 30px;
+    margin-top: 50px;
+}

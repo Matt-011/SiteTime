@@ -5,11 +5,40 @@
     font-family: Arial, sans-serif;
 }
 
-header {
-    width: 100%;
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
-/* NAVBAR PRINCIPAL */
+header {
+    width: 100%;
+    position: relative;
+}
+
+/*Logo em cima*/
+.logo-fixada {
+    position: fixed;
+    /* fixa no topo */
+    top: 10px;
+    /*nao ficar grudada la em cima*/
+    left: 50%;
+    /*joga para a esquerda*/
+    transform: translateX(-50%);
+    /* centraliza na horizontal*/
+    z-index: 9999;
+    /* garante que fique acima de tudo */
+}
+
+.logo-fixada img {
+    height: 120px;
+    filter: drop-shadow(0 0 10px black);
+    /*faz ter uma sombra em baixo*/
+}
+
+/* Navbar */
 .navbar {
     display: flex;
     align-items: center;
@@ -22,53 +51,225 @@ header {
 .menu-right {
     display: flex;
     gap: 25px;
-    margin-top: 10px;
-    transition: 1s;
-}
-
-.menu-left:hover,
-.menu-right:hover{
-    transform: scale(1.2);
+    /* Espaçamento entre links */
 }
 
 .menu-left a,
 .menu-right a {
     text-decoration: none;
+    /*fica sem a linha de baixo*/
     color: white;
     font-weight: bold;
-    font-size: 30px;
-    transition: 2s;
+    font-size: 28px;
+    transition: 1s;
 }
 
 .menu-left a:hover,
-.menu-right a:hover{
+.menu-right a:hover {
     color: yellow;
+    transform: scale(1.2);
 }
 
-/* LOGO CENTRAL */
-.logo-centro {
-    margin-top: 90px;
+/*CALENDÁRIO*/
+.calendario-container {
+    margin: 40px auto;
+    /* adiciona espaço acima/abaixo e centraliza no meio da página */
+    width: 90%;
+    /* largura ocupa 90% da tela */
+    max-width: 900px;
+    /* largura máxima para não ficar gigante em telas grandes */
+    background: #111;
+    /* fundo cinza escuro */
+    padding: 20px;
+    /* espaço interno nas bordas */
+    border-radius: 10px;
+    /* cantos arredondados */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    /* leve sombra ao redor */
 }
 
-.logo-centro img {
-    height: 150px;
-    margin-left: 20px ;
-}
-
-.titulo{
-    justify-content: center;
-    align-items: center;
+/* -------------------- Título do mês -------------------- */
+.titulo-mes {
     text-align: center;
-    margin-top: 50px;
+    /* centraliza o texto */
+    font-size: 40px;
+    /* tamanho da fonte grande */
+    font-weight: bold;
+    /* deixa o texto em negrito */
+    margin-bottom: 20px;
+    /* espaço abaixo do título */
 }
 
-.base{
-    justify-content: center;
-    align-items: center;
-    width: 98%;
-    height: 70vh;
-    background-color: whitesmoke;
-    border: 1px solid black;
-    margin-left: 20px;
-    margin-bottom: 20px;
+/* -------------------- Grid do calendário -------------------- */
+.calendario {
+    display: grid;
+    /* ativa o grid layout */
+    grid-template-columns: repeat(7, 1fr);
+    /* cria 7 colunas iguais (um para cada dia da semana) */
+    gap: 10px;
+    /* espaço entre os quadrados */
+}
+
+/* -------------------- Estilo padrão dos dias -------------------- */
+.dia {
+    background: #222;
+    /* cor de fundo cinza escuro */
+    padding: 10px;
+    /* espaço interno */
+    height: 110px;
+    /* altura fixa */
+    border-radius: 8px;
+    /* bordas arredondadas */
+    position: relative;
+    /* necessário para posicionar imagens dentro do dia */
+    display: flex;
+    /* organiza o conteúdo interno */
+    justify-content: flex-start;
+    /* número do dia fica no canto esquerdo */
+    align-items: flex-start;
+    /* número do dia fica no canto superior */
+    font-size: 20px;
+    /* tamanho da fonte */
+}
+
+/* -------------------- Dias com jogo (versão especial) -------------------- */
+.diaum {
+    background: #222;
+    /* mesma cor inicial do dia normal */
+    padding: 10px;
+    height: 110px;
+    border-radius: 8px;
+    position: relative;
+    /* permite posicionamento absoluto da imagem */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 20px;
+    transition: 1s;
+    /* suaviza a animação de hover */
+}
+
+/* imagem do jogo dentro do dia */
+.diaum img {
+    width: 40px;
+    /* tamanho da imagem */
+    position: absolute;
+    /* posiciona livremente dentro do quadrado */
+    bottom: 5px;
+    /* encostada no fundo */
+    right: 5px;
+    /* encostada à direita */
+}
+
+/* efeito ao passar o mouse nos dias com jogo */
+.diaum:hover {
+    transform: scale(1.2);
+    /* aumenta o quadrado */
+    background-color: yellow;
+    /* troca o fundo para amarelo */
+}
+
+/* -------------------- Células vazias no início do calendário -------------------- */
+.vazio {
+    background: transparent;
+    /* fundo invisível */
+}
+
+@media (max-width: 600px) {
+
+    .logo-fixada img {
+        height: 80px;
+    }
+
+    .navbar {
+        flex-direction: row;
+        height: auto;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    .menu-left {
+        margin-right: 20vh;
+    }
+
+    .menu-left a,
+    .menu-right a {
+        font-size: 20px;
+    }
+
+    .calendario-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .titulo-mes {
+        font-size: 28px;
+    }
+
+    .calendario {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 6px;
+    }
+
+    .dia,
+    .diaum {
+        height: 75px;
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .diaum img {
+        width: 28px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .logo-fixada img {
+        height: 100px;
+    }
+
+    .navbar {
+        justify-content: space-between;
+        padding: 0 20px;
+        height: 12vh;
+    }
+
+    .menu-left a,
+    .menu-right a {
+        font-size: 24px;
+    }
+
+    .calendario-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .titulo-mes {
+        font-size: 34px;
+    }
+
+    .calendario {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 8px;
+    }
+
+    .dia,
+    .diaum {
+        height: 95px;
+        font-size: 18px;
+        padding: 6px;
+    }
+
+    .diaum img {
+        width: 35px;
+    }
+}
+
+footer {
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 30px;
+    margin-top: 50px;
 }

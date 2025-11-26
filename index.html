@@ -4,36 +4,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/estilo.css">
     <link rel="shortcut icon" href="images/cropped-Asset-2.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Home</title>
 </head>
 
 <body>
+
+    <!-- LOGO FIXA -->
+    <div class="logo-fixada">
+        <img src="images/cropped-Asset-2.png" alt="Logo do Clube">
+    </div>
+
+    <!-- HEADER E MENU -->
     <header>
-        <nav class="navbar"> 
-            <!-- Menu Esquerda -->
+        <nav class="navbar"> <!-- Menu principal -->
             <div class="menu-left">
-                <a href="#">CLUBE</a>
-            </div>
-            <div class="menu-left">
-                <a href="#">ELENCO</a>
+                <a href="#">HOME</a>
+                <a href="pages/clube.html">CLUBE</a>
             </div>
 
-            <!-- Logo Central -->
-            <div class="logo-centro">
-                <img src="images/cropped-Asset-2.png" alt="Logo">
-            </div>
-
-            <!-- Menu Direita -->
             <div class="menu-right">
-                <a href="#">NOTICIAS</a>
-            </div>
-            <div class="menu-right">
+                <a href="#">NOTÍCIAS</a>
                 <a href="pages/calendario.html">JOGOS</a>
             </div>
         </nav>
     </header>
+
+    <!-- Banner -->
+    <section class="banner Entrada">
+        <h1>Nascer, Viver e no Santos Morrer!</h1>
+    </section>
+
+    <!-- Noticias -->
+    <section class="noticias-section">
+        <h2>Últimas Notícias</h2> <!-- Título da seção -->
+
+        <!-- GRID DE NOTÍCIAS -->
+        <div class="grid-noticias">
+            <div class="card-noticia"> <!-- Card 1 -->
+                <img src="images/neymar-santos-mirassol-e17636063.png" alt="Notícia 1">
+                <p>Santos e Mirrassol ficam em empate!</p>
+            </div>
+
+            <div class="card-noticia"> <!-- Card 2 -->
+                <img src="images/15112025_cg_palmeiras_7087_32-10.png" alt="Notícia 2">
+                <p>Santos vence clássico importante e sobe na tabela!</p>
+            </div>
+
+            <div class="card-noticia"> <!-- Card 3 -->
+                <img src="images/r1573358_1296x729_16-9.png" alt="Notícia 3">
+                <p>Santos quase empate a partida, perdendo de 3x0 para o Flamengo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANIMAÇÂO E ELENCO -->
+    <section class="cortina-container">
+        <div class="cortina" onclick="mostrarElenco()">
+            <h2>Mostrar Elenco?</h2>
+        </div>
+
+        <!-- ÁREA DO ELENCO (INICIALMENTE FECHADA) -->
+        <div class="elenco" id="areaElenco">
+
+            <!-- JOGADOR 1 -->
+            <div class="jogador-card">
+                <img src="images/brazao-1.png">
+                <h3>Gabriel Brazão</h3>
+                <p>Goleiro | Brasil</p>
+            </div>
+
+            <!-- JOGADOR 2 -->
+            <div class="jogador-card">
+                <img src="images/frias.png">
+                <h3>Adonis Frías</h3>
+                <p>Zagueiro | Argentina</p>
+            </div>
+
+            <!-- JOGADOR 3 -->
+            <div class="jogador-card">
+                <img src="images/peres.png">
+                <h3>Luan Peres</h3>
+                <p>Zagueiro | Brasil</p>
+            </div>
+
+            <!-- JOGADOR 4 -->
+            <div class="jogador-card">
+                <img src="images/Igor Vinícius.png">
+                <h3>Igor Vinícius</h3>
+                <p>Lateral Direito | Brasil</p>
+            </div>
+
+            <!-- JOGADOR 5 -->
+            <div class="jogador-card">
+                <img src="images/Escobar.png">
+                <h3>Escobar</h3>
+                <p>Lateral Esquerdo | Argentina</p>
+            </div>
+
+            <!-- JOGADOR 6 -->
+            <div class="jogador-card">
+                <img src="images/Zé Rafael.png">
+                <h3>Zé Rafael</h3>
+                <p>Volante | Brasil</p>
+            </div>
+
+            <!-- JOGADOR 7 -->
+            <div class="jogador-card">
+                <img src="images/Victor Hugo.png">
+                <h3>Victor Hugo</h3>
+                <p>Meia | Brasil</p>
+            </div>
+
+            <!-- JOGADOR 8 -->
+            <div class="jogador-card">
+                <img src="images/Neymar Jr.png">
+                <h3>Neymar Jr</h3>
+                <p>Meia | Brasil</p>
+            </div>
+
+            <!-- JOGADOR 9 -->
+            <div class="jogador-card">
+                <img src="images/Álvaro Barreal.png">
+                <h3>Álvaro Barreal</h3>
+                <p>Atacante | Argentina</p>
+            </div>
+
+            <!-- JOGADOR 10 -->
+            <div class="jogador-card">
+                <img src="images/Guilherme.png">
+                <h3>Guilherme</h3>
+                <p>Atacante | Brasil</p>
+            </div>
+
+            <!-- JOGADOR 11 -->
+            <div class="jogador-card">
+                <img src="images/Lautaro Díaz.png">
+                <h3>Lautaro Díaz</h3>
+                <p>Atacante | Argentina</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Santos FC - Página criada para fins educativos.</p>
+    </footer>
+
+    <script>
+        function mostrarElenco() {
+            document.getElementById("areaElenco").classList.toggle("aberto");
+        }
+    </script>
+
 </body>
 
 </html>
